@@ -26,38 +26,17 @@
 
 ## Claude代理服务监控
 
-### 服务信息
-- **端口**: 8765
-- **服务**: Claude API代理服务器
-- **进程**: python3 1proxy.py
-- **日志位置**: `/Users/cloudv/keep-claude/proxy.log`
-
-### 日志监控命令
-
-#### 实时监控日志
+### 实时监控日志
 ```bash
 tail -f /Users/cloudv/keep-claude/proxy.log
 ```
 
-#### 查看最近100行日志
+### 查看错误日志
 ```bash
-tail -100 /Users/cloudv/keep-claude/proxy.log
+grep "ERROR" /Users/cloudv/keep-cloud/proxy.log
 ```
 
-#### 查看错误日志
-```bash
-grep -E "(ERROR|WARNING|CRITICAL)" /Users/cloudv/keep-claude/proxy.log
-```
-
-#### 查看服务状态
+### 查看服务状态
 ```bash
 lsof -i :8765
 ```
-
-### 服务特点
-- 🔄 自动API密钥轮换
-- 🛡️ 安全的系统级密钥管理
-- 🚀 高并发请求处理
-- 📊 详细的请求日志记录
-- 🔁 智能错误重试机制
-
